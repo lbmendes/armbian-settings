@@ -66,7 +66,8 @@ To change the sound output to hdmi:
 pacmd set-default-sink $(pacmd list-sinks | grep 'name:' | grep -i 'hdmi' | cut -f 2 -d: | tr -d '<> ')
 ~~~
 
-This change is not persistent, to make it persistent add the command above in the file /etc/rc.local
+This change is not persistent, to make it persistent add the command above in end of the file ~/.bashrc
+(Do this with your user, not root/sudo)
 
 
 ##### Disable the desktop environment
@@ -82,7 +83,7 @@ If in some moment you need the desktop environment just run `startx` from the te
 
 ##### Setting the numlock to "ON" at start up.
 
-Add the lines below to the file /etc/rc.local
+Add, with sudo, the lines below to the file /etc/rc.local
 ~~~bash
 # Turn Numlock on for the TTYs:
 for tty in /dev/tty[1-6]; do
@@ -99,7 +100,7 @@ This may cause black screen on connect the SBC to 4k resolution devices. To deal
 
 Here we will do the second option.
 
-Add the line below to the file /boot/armbianEnv.txt
+Add, with sudo, the line below to the file /boot/armbianEnv.txt
 ~~~bash
 extraargs=video=HDMI-A-1:1920x1080@60
 ~~~
