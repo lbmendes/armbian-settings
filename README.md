@@ -63,7 +63,7 @@ pacmd list-sinks | less
 To change the sound output to hdmi:
 ~~~bash
 # Change the sound output to HDMI
-pacmd set-default-sink $(pacmd list-sinks | grep 'name:' | grep -i 'hdmi' | cut -f 2 -d: | tr -d '<> ')
+pacmd set-default-sink $(pactl list short sinks | grep -i 'hdmi' | awk '{print $2}')
 ~~~
 
 This change is not persistent, to make it persistent add the command above in end of the file ~/.bashrc
