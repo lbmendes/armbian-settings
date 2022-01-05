@@ -21,7 +21,9 @@ sudo apt install suckless-tools
 
 3. Create in you user home a file `~/.xinitrc` with this line:
 
-`exec i3`
+~~~bash
+exec i3
+~~~
 
 4. Now, when you run `startx` the i3wm will be initiated
 
