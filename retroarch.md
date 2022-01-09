@@ -67,7 +67,8 @@ cd pcsx_rearmed/
 
 2. Build the core:
 ~~~bash
-make -f Makefile.libretro ARCH=arm DYNAREC=ari64 HAVE_NEON=0 BUILTIN_GPU=peops
+make -f Makefile.libretro THREAD_RENDERING=0 ARCH=arm DYNAREC=ari64 HAVE_NEON=1 BUILTIN_GPU=neon clean
+make -f Makefile.libretro THREAD_RENDERING=0 ARCH=arm DYNAREC=ari64 HAVE_NEON=1 BUILTIN_GPU=neon
 ~~~
 
 3. Copy the .so file to the retroarch cores folder:
